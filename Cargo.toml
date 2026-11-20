@@ -1,0 +1,22 @@
+[package]
+name = "build-time-macros"
+description = "Provides simple proc-macros for getting the build date and time."
+license = "0BSD"
+repository = "https://github.com/lordmulder/build-time-macros"
+version = "1.0.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[features]
+local = ["time/local-offset"]
+
+[dependencies]
+time = { version = "0.3", default-features = false, features = ["std", "formatting", "macros"] }
+
+[dev-dependencies]
+regex = { version ="1.13", default-features = false }
+
+[package.metadata.docs.rs]
+all-features = true
